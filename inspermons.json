@@ -1,0 +1,195 @@
+[
+		{
+		"nome" : "Charmander",
+		"poder" : 25,
+		"vida" : 100,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Squirtle",
+		"poder" : 25,
+		"vida" : 200,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Bulbasaur",
+		"poder" : 25,
+		"vida" : 150,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Pikachu",
+		"poder" : 30,
+		"vida" : 200,
+		"defesa" : 12
+	},
+	{
+		"nome" : "Caterpie",
+		"poder" : 20,
+		"vida" : 100,
+		"defesa" : 5
+	},
+	{
+		"nome" : "Pidgey",
+		"poder" : 20,
+		"vida" : 100,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Weedle",
+		"poder" : 20,
+		"vida" : 100,
+		"defesa" : 5
+	},
+	{
+		"nome" : "Ratata",
+		"poder" : 20,
+		"vida" : 100,
+		"defesa" : 12
+	},
+	{
+		"nome" : "Spearow",
+		"poder" : 22,
+		"vida" : 120,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Ekans",
+		"poder" : 24,
+		"vida" : 150,
+		"defesa" : 12
+	},
+	{
+		"nome" : "Sandshrew",
+		"poder" : 23,
+		"vida" : 100,
+		"defesa" : 13
+	},
+	{
+		"nome" : "Clefairy",
+		"poder" : 25,
+		"vida" : 200,
+		"defesa" : 18
+	},
+	{
+		"nome" : "Vulpix",
+		"poder" : 27,
+		"vida" : 140,
+		"defesa" : 17
+	},
+	{
+		"nome" : "Zubat",
+		"poder" : 22,
+		"vida" : 110,
+		"defesa" : 13
+	},
+	{
+		"nome" : "Oddish",
+		"poder" : 25,
+		"vida" : 100,
+		"defesa" : 10
+	},
+	{
+		"nome" : "Diglett",
+		"poder" : 23,
+		"vida" : 120,
+		"defesa" : 13
+	},
+	{
+		"nome" : "Growlithe",
+		"poder" : 29,
+		"vida" : 120,
+		"defesa" : 14
+	},
+	{
+		"nome" : "Abra",
+		"poder" : 29,
+		"vida" : 100,
+		"defesa" : 14
+	},
+	{
+		"nome" : "Geodude",
+		"poder" : 22,
+		"vida" : 140,
+		"defesa" : 15
+	},
+	{
+		"nome" : "Snorlax",
+		"poder" : 20,
+		"vida" : 500,
+		"defesa" : 20
+	},
+	{
+		"nome" : "Grimer",
+		"poder" : 24,
+		"vida" : 200,
+		"defesa" : 14
+	},
+	{
+		"nome" : "Exeggcute",
+		"poder" : 29,
+		"vida" : 110,
+		"defesa" : 16
+	},
+	{
+		"nome" : "Scyther",
+		"poder" : 30,
+		"vida" : 120,
+		"defesa" : 13
+	},
+	{
+		"nome" : "Lapras",
+		"poder" : 30,
+		"vida" : 150,
+		"defesa" : 18
+	},
+	{
+		"nome" : "Gyarados",
+		"poder" : 30,
+		"vida" : 200,
+		"defesa" : 15
+	},
+	{
+		"nome" : "Articuno",
+		"poder" : 43,
+		"vida" : 300,
+		"defesa" : 19
+	},
+	{
+		"nome" : "Zapdos",
+		"poder" : 45,
+		"vida" : 300,
+		"defesa" : 17
+	},
+	{
+		"nome" : "Moltres",
+		"poder" : 40,
+		"vida" : 310,
+		"defesa" : 20
+	},
+	{
+		"nome" : "Dratini",
+		"poder" : 27,
+		"vida" : 130,
+		"defesa" : 12
+	},
+	{
+		"nome" : "Dragonite",
+		"poder" : 37,
+		"vida" : 260,
+		"defesa" : 20
+	},
+	{
+		"nome" : "Mew",
+		"poder" : 50,
+		"vida" : 500,
+		"defesa" : 20
+	},
+	{
+		"nome" : "Mewtwo",
+		"poder" : 55,
+		"vida" : 500,
+		"defesa" : 18
+	}
+
+]

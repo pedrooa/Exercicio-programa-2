@@ -26,6 +26,7 @@ while True:
         break #O jogo acaba quando o jogador vai dormir
     elif açao_usuario == 1:
         print('\n Andando...')
+        print('\nSeu InsperDex é este: \n{0}'. format(InsperDex))
         p = int(input('\nQual pokemon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
         meu = inspermon_inicial(p)
         print("\nStats iniciais de seu Ipmons: {0}".format(meu))

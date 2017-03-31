@@ -15,7 +15,7 @@ def Batalha(meu,p,oponente):
             print("A vida de seu Ipmon restante é: {0}".format(meu['vida']))
         else:
             meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
+            #o print funciona mas quando retorna Verdadeiro o if do ep02 não funciona
             if meu['vida'] <= 0:
                 print("Você foi derrotado!")
-                global perdeu
-                perdeu = True
+                return True

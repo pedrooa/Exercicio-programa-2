@@ -23,14 +23,14 @@ while True:
     açao_usuario = int(input('Você pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 0 para dormir: '))
     if açao_usuario == 0:
         print('\n Dormindo!')
-        break#O jogo acaba quando o jogador vai dormir
+        break #O jogo acaba quando o jogador vai dormir
     elif açao_usuario == 1:
         print('\n Andando...')
         p = int(input('\nQual pokemon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
         meu = inspermon_inicial(p)
         print("\nStats iniciais de seu Ipmons: {0}".format(meu))
         oponente = random.randrange(len(Inspermons))
-        Batalha(meu,p, oponente)
+        Batalha(meu,p, oponente,Inspermons)
         #Não está funcionando este if
         if Batalha == True:
             print('\nSeu Inspermon esta inconsciente, va a helpdesk imediatamente recuperar a vida dele!')

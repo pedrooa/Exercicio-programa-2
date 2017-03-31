@@ -1,8 +1,8 @@
 from Insperdex import mostra_Insperdex as Insperdex
-
+import json
 
 def Batalha(meu,p,oponente,Inspermons,InsperDex):
-    import json
+
     """global InsperDex
     InsperDex = []""" #Criado um .py para o InsperDex
     print("\nVoce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))

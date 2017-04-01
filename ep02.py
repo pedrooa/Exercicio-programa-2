@@ -30,14 +30,14 @@ while True:
         print('\n Andando...')
         p = int(input('\nQual pokemon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
         meu = inspermon_inicial(p)
-        if meu not in Insperdex:
-            Insperdex.append(meu)
+        if meu['nome'] not in Insperdex:
+            Insperdex.append(meu['nome'])
         print("\nStats iniciais de seu Ipmons: \n{0}".format(meu))
         oponente = random.randrange(len(Inspermons))
-        if Inspermons[oponente] not in Insperdex:
-            Insperdex.append(Inspermons[oponente])
+        if Inspermons[oponente]['nome'] not in Insperdex:
+            Insperdex.append(Inspermons[oponente]['nome'])
         Batalha(meu,p, oponente,Inspermons)
-        print('\nSeu InsperDex é este: \n{0}'. format(Insperdex))
+        print('\nSeu InsperDex é este:\n{0}'. format(Insperdex))
         #Não está funcionando este if
         if Batalha == True:
             print('\nSeu Inspermon esta inconsciente, va a helpdesk imediatamente recuperar a vida dele!\n')

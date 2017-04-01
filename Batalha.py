@@ -2,9 +2,6 @@ from Insperdex import mostra_Insperdex as Insperdex
 import json
 
 def Batalha(meu,p,oponente,Inspermons,InsperDex):
-
-    """global InsperDex
-    InsperDex = []""" #Criado um .py para o InsperDex
     print("\nVoce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))
     fuga = input('\nDeseja fugir da batalha? (1) Sim e (0) Não \n')
     if fuga == 1:
@@ -23,4 +20,4 @@ def Batalha(meu,p,oponente,Inspermons,InsperDex):
                 #O print funciona mas quando retorna Verdadeiro o if do ep02 não funciona
                 if meu['vida'] <= 0:
                     print("\nVocê foi derrotado!")
-                    """return True""" #Não sei se há necessidade disso
+                    return True

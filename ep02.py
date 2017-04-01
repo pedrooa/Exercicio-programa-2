@@ -2,7 +2,7 @@
 import random
 import json
 from Batalha import Batalha
-InsperDex = []
+from Insperdex import mostra_Insperdex as Insperdex
 #Mostrar os tres pokemons iniciais em ordem numero de 0-2, para depois o usuario escolher qual deseja
 def inspermon_inicial(ipmon_inicial):
     return Inspermons[ipmon_inicial]

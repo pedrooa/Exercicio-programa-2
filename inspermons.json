@@ -3,19 +3,22 @@
 		"nome" : "Charmander",
 		"poder" : 25,
 		"vida" : 100,
-		"defesa" : 10
+		"defesa" : 10,
+		"xp" : 0
 	},
 	{
 		"nome" : "Squirtle",
 		"poder" : 25,
 		"vida" : 200,
-		"defesa" : 10
+		"defesa" : 10,
+		"xp" : 0
 	},
 	{
 		"nome" : "Bulbasaur",
 		"poder" : 25,
 		"vida" : 150,
-		"defesa" : 10
+		"defesa" : 10,
+		"xp" : 0
 	},
 	{
 		"nome" : "Pikachu",
@@ -85,7 +88,7 @@
 	},
 	{
 		"nome" : "Oddish",
-		"poder" : 25,
+		"poder" : 20,
 		"vida" : 100,
 		"defesa" : 10
 	},

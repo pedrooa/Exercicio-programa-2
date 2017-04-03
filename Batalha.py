@@ -18,4 +18,4 @@ def Batalha(meu,p,oponente,Inspermons):
                 #O print funciona mas quando retorna Verdadeiro o if do ep02 não funciona
                 if meu['vida'] <= 0:
                     print("\nVocê foi derrotado!")
-                    return True #Não sei se há necessidade disso
+                    #return True #Não sei se há necessidade disso

@@ -32,7 +32,5 @@ def Batalha(meu,p,oponente,Inspermons):
                 meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                 if meu['vida'] <= 0:
                     print("\nVocê foi derrotado!")
-<<<<<<< HEAD
+
                     #return True #Não sei se há necessidade disso
-=======
->>>>>>> 18e28764bb72d3ad405f808dc815b38e68324108

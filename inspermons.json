@@ -2,7 +2,7 @@
 		{
 		"nome" : "Charmander",
 		"poder" : 25,
-		"vida" : 100,
+		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0
 	},
@@ -16,7 +16,7 @@
 	{
 		"nome" : "Bulbasaur",
 		"poder" : 25,
-		"vida" : 150,
+		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0
 	},

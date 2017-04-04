@@ -79,4 +79,3 @@ while True:
             meus_ipmon[p]["vida"] += 100
             meus_ipmon[p]["defesa"] +=5
         print('\nSeu InsperDex é este:\n{0}'. format(Insperdex))
-        

@@ -3,32 +3,6 @@ import random
 import json
 from Batalha import Batalha
 
-meus_ipmon= [
-        {
-        "nome" : "Charmander",
-        "poder" : 25,
-        "vida" : 200,
-        "defesa" : 10,
-        "xp" : 0
-    },
-    {
-        "nome" : "Squirtle",
-        "poder" : 25,
-        "vida" : 200,
-        "defesa" : 10,
-        "xp" : 0
-    },
-    {
-        "nome" : "Bulbasaur",
-        "poder" : 25,
-        "vida" : 200,
-        "defesa" : 10,
-        "xp" : 0
-    }]
-
-
-
-
 #Mostrar os tres pokemons iniciais em ordem numero de 0-2, para depois o usuario escolher qual deseja
 def inspermon_inicial(ipmon_inicial):
     return Inspermons[ipmon_inicial]
@@ -44,6 +18,11 @@ with open('inspermons.json') as arquivo:
     Inspermons = json.load(arquivo)
 
 Insperdex = []
+meus_ipmon = list()
+for i in range(3):
+    meus_ipmon.append(Inspermons[i])
+print(meus_ipmon)
+
 
 while True:
     açao_usuario = int(input('\nVocê pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 0 para dormir: '))
@@ -79,3 +58,5 @@ while True:
             meus_ipmon[p]["vida"] += 100
             meus_ipmon[p]["defesa"] +=5
         print('\nSeu InsperDex é este:\n{0}'. format(Insperdex))
+    else:
+        print("Código incorreto, redigite!")

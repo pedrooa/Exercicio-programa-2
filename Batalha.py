@@ -1,4 +1,4 @@
-from Insperdex import mostra_Insperdex as Insperdex
+#from Insperdex import mostra_Insperdex as Insperdex
 import json
 import random
 

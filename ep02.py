@@ -1,5 +1,5 @@
 #Ep02 - Inspermon
-import random, json
+import random, json, sys, time
 from colorama import Fore, Back, Style
 from Batalha import Batalha
 
@@ -27,10 +27,14 @@ for i in range(3):
 while True:
     açao_usuario = int(input('\nVocê pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 0 para dormir: '))
     if açao_usuario == 0:
-        print(Fore.GREEN + '\n Dormindo!')
+        print('\n Dormindo!')
         break #O jogo acaba quando o jogador vai dormir
     elif açao_usuario == 1:
-        print(Fore.GREEN + '\n Andando...')
+        string = "\nAndando ...\n"
+        for char in string:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(0.4)
         p = int(input('\nQual InsperMon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
         #meus_ipmon[p] = inspermon_inicial(p)
         if meus_ipmon[p]['nome'] not in Insperdex:

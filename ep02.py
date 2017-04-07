@@ -3,17 +3,6 @@ import random, json, sys, time, funções
 from colorama import Fore, Back, Style
 from Batalha import Batalha
 
-#Mostrar os tres pokemons iniciais em ordem numero de 0-2, para depois o usuario escolher qual deseja
-def inspermon_inicial(ipmon_inicial):
-    return Inspermons[ipmon_inicial]
-
-def mostra_inspermon(p):
-    print('\n Inspermon : {0}'. format(Inspermons[p]['nome']))
-    print('Poder = {0}'. format(Inspermons[p]['poder']))
-    print('Defesa = {0}'. format(Inspermons[p]['defesa']))
-    print('Vida =  {0} \n'. format(Inspermons[p]['vida']))
-
-
 with open('inspermons.json') as arquivo:
     Inspermons = json.load(arquivo)
 
@@ -32,13 +21,15 @@ while True:
         #obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
         p = int(input('\nQual InsperMon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#meus_ipmon[p] = inspermon_inicial(p)
 
+        #Adiciona os pokemons ao Insperdex
         if meus_ipmon[p]['nome'] not in Insperdex:
             Insperdex.append(meus_ipmon[p]['nome'])
         print("\nStats iniciais de seu InsperMon: \n{0}".format(meus_ipmon[p]))
         oponente = random.randrange(len(Inspermons))
-
         if Inspermons[oponente]['nome'] not in Insperdex:
             Insperdex.append(Inspermons[oponente]['nome'])
+
+        #Batalha entre os pokemons
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
 
         while True:

@@ -26,20 +26,20 @@ while True:
         print('Codigo Inexistente!')
 
 while True:
-    print(traço + '\n')
-    açao_usuario = int(input('\nVocê pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 0 para dormir: '))
-    if açao_usuario == 0:
+    print('\n' + traço + '\n')
+    açao_usuario = int(input('\nVocê pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 2 para dormir: '))
+    if açao_usuario == 2:
         #Pergunta ao usuário se quer salvar o jogo
-        print(traço + '\n')
+        print('\n' + traço + '\n')
         save = int(input('\nDeseja salvar seu progresso?(Obs : Isso vai deletar seu save passado)\n1   -   Sim\n2   -   Nao\n'))
         if save == 1:
             with open('SaveGame.json','w') as arquivo:
                 json.dump(Checkpoint,arquivo)
-            print(traço + '\n')
+            print('\n' + traço + '\n')
             print('\nJogo salvo com sucesso!\nDormindo!')
             break
         elif save ==2:
-            print(traço + '\n')
+            print('\n' + traço + '\n')
             print('\n Dormindo!')
             break
         else:
@@ -50,7 +50,7 @@ while True:
         #Armazena a vida inicial do ipmon
         vida = meus_ipmon[p]['vida']
         #Separa com traços
-        print(traço + '\n')
+        print('\n' + traço + '\n')
         #Roda a função timer para a string
         string = "\nAndando ...\n"
         função.escrita_timer(string)
@@ -61,34 +61,34 @@ while True:
         oponente = random.randrange(len(Inspermons))
         if Inspermons[oponente]['nome'] not in Insperdex:
             Insperdex.append(Inspermons[oponente]['nome'])
-        print(traço + '\n')
+        print('\n' + traço + '\n')
         print("\nStats iniciais de seu InsperMon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nXp = {4}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['xp']))
         #Batalha entre os Inspermons
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
         #Corrige a vida do Inspermon
         função.correcao_vida(meus_ipmon, p)
         while True:
-            print(traço + '\n')
-            hp = int(input("\nBem Vindo ao helpdesk! Digite (1) para recuperar a vida de seu Inspermon, ou (0) para continuar: "))
+            print('\n' + traço + '\n')
+            hp = int(input("\nBem Vindo ao helpdesk! Digite (1) para recuperar a vida de seu Inspermon, ou (2) para continuar: "))
             #Condições para recuperação de vida
             if hp == 1:
                 meus_ipmon[p]['vida'] = vida
                 break
-            elif hp == 0:
+            elif hp == 2:
                 break
             else:
-                print(traço + '\n')
+                print('\n' + traço + '\n')
                 print('\nEscreva direito!')
         #Condição para evolução do Inspermon
         if meus_ipmon[p]["xp"] >= 50:
-            print(traço + '\n')
+            print('\n' + traço + '\n')
             print("\nSeu InsperMon está evoluindo!")
             meus_ipmon[p]["xp"] = 0
             meus_ipmon[p]["poder"] +=15
             meus_ipmon[p]["vida"] += 100
             meus_ipmon[p]["defesa"] +=5
         #Mostra o Insperdex
-        print(traço + '\n')
+        print('\n' + traço + '\n')
         print('\nSeu Insperdex é:')
         função.mostra_insperdex(Insperdex)
         #Salva meusipmon e insperdex

@@ -41,8 +41,11 @@ class função():
         vari = True
         while vari:
             p = int(input('\nQual InsperMon deseja usar: \n{0} (0) \n{1} (1) \n{2} (2)\n'.format(charm,squir,bulb))) #meus_ipmon[p] = inspermon_inicial(p)
-            if Inspermons[p]['vida'] == 0:
-                print("\nEste Inspermon não está mais entre nós. Escolha outro\n")
-            else:
+            if p == 0 or p == 1 or p == 2 and Inspermons[p]['vida'] != 0:
                 vari = False
                 return p
+            else:
+                if Inspermons[p]['vida'] == 0:
+                    print("\nEste Inspermon não está mais entre nós. Escolha outro\n")
+                else:
+                    print('\nDigite o numero referente ao pokemon que deseja, corretamente.')

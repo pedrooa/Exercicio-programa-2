@@ -1,5 +1,6 @@
 #Ep02 - Inspermon
-import random, json, sys, time, funções
+import random, json
+from funções import *
 from colorama import Fore, Back, Style
 from Batalha import Batalha
 
@@ -12,14 +13,18 @@ meus_ipmon = lista_meus_ipmons(Inspermons)
 while True:
     açao_usuario = int(input('\nVocê pode andar e procurar Inspermons ou dormir para recuperar sua vida. \nDigite 1 para andar ou 0 para dormir: '))
     if açao_usuario == 0:
-        print(Style.GREEN + '\n Dormindo!')
-        break #O jogo acaba quando o jogador vai dormir
+        print('\n Dormindo!')
+        break
     elif açao_usuario == 1:
+        #Pergunta ao usuário qual innspermon ele quer usar
+        p = inspermon_usuario(meus_ipmon)
+
+        #Armazena a vida inicial do ipmon
+        vida = meus_ipmon[p]['vida']
+
+        #Roda a função timer para a string
         string = "\nAndando ...\n"
         escrita_timer(string)
-
-        #obs: funciona com outros pokemons se o jogador escolher numeros acima de 2
-        p = int(input('\nQual InsperMon deseja usar: \nCharmander (0) \nSquirtle (1) \nBulbasaur(2)\n'))#meus_ipmon[p] = inspermon_inicial(p)
 
         #Adiciona os pokemons ao Insperdex
         if meus_ipmon[p]['nome'] not in Insperdex:
@@ -32,9 +37,15 @@ while True:
         #Batalha entre os pokemons
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
 
+        #Corrige a vida do Inspermon
+        correcao_vida(meus_ipmon, p)
+
         while True:
             hp = int(input("\nBem Vindo ao helpdesk! Digite (1) para recuperar a vida de seu Inspermon, ou (0) para continuar: "))
-            if hp ==1 or hp ==0:
+            if hp == 1:
+                meus_ipmon[p]['vida'] = vida
+                break
+            elif hp == 0:
                 break
             else:
                 print('\nEscreva direito!')

@@ -1,6 +1,4 @@
-#from Insperdex import mostra_Insperdex as Insperdex
-import json
-import random
+import json, colorama, random
 
 def Batalha(meu,p,oponente,Inspermons):
     print("\nVoce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))

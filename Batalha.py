@@ -22,12 +22,13 @@ def Batalha(meu,p,oponente,Inspermons):
                     if meu['vida'] <= 0:
                         print("\nVocê foi derrotado!")
     elif fuga == 2:
+        e=1
         while meu['vida'] > 0 and Inspermons[oponente]['vida']>0:
-            e = 1
             print('\n' + traço + '\n')
             print("\nRound {0} :" .format(e))
             print("O {0} possui {1} de vida  ---- O {2} possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida']))
             e += 1
+
             Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder'] + Inspermons[oponente]['defesa']
             if Inspermons[oponente]['vida'] <= 0:
                 print("\nVocê derrotou seu oponente!")

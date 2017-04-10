@@ -2,7 +2,7 @@ import sys, time
 
 meus_ipmon = list()
 
-class função():
+class função:
     def lista_meus_ipmons(Inspermons):
         for i in range(3):
             meus_ipmon.append(Inspermons[i])
@@ -12,7 +12,7 @@ class função():
         for char in estringue:
             sys.stdout.write(char)
             sys.stdout.flush()
-            time.sleep(0.4)
+            time.sleep(0.1)
 
     #Funções não utilizadas
     def mostra_inspermon(Inspermons,p):

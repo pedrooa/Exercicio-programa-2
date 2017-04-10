@@ -1,14 +1,14 @@
 #Ep02 - Inspermon
 import random, json
-#from funções import função
+from funções import função
 from colorama import Fore, Back, Style
 from Batalha import Batalha
 
-import sys, time
+'''import sys, time
 
 meus_ipmon = list()
-
-class função:
+'''
+'''class função:
     def lista_meus_ipmons(Inspermons):
         for i in range(3):
             meus_ipmon.append(Inspermons[i])
@@ -54,10 +54,7 @@ class função:
                 if Inspermons[p]['vida'] == 0:
                     print("\nEste Inspermon não está mais entre nós. Escolha outro\n")
                 else:
-                    print('\nDigite o numero referente ao pokemon que deseja, corretamente.')
-
-
-
+                    print('\nDigite o numero referente ao pokemon que deseja, corretamente.')'''
 
 with open('inspermons.json') as arquivo:
     Inspermons = json.load(arquivo)
@@ -66,9 +63,12 @@ Insperdex = []
 #Cria a lista com os ipmon iniciais e cria uma lista com os valores padrão de vida
 meus_ipmon = função.lista_meus_ipmons(Inspermons)
 vidas = []
+traço = "------"*15
+
+#Cria lista de vidas iniciais
 for e in meus_ipmon:
     vidas.append(e["vida"])
-traço = "------"*15
+
 Checkpoint = [meus_ipmon]  #Prevenção de erros caso o jogador tente dar Save sem ter jogado nada.
 
 load = int(input('\nDeseja carregar um jogo existente?\n1   -   Sim\n2   -   Nao\n'))

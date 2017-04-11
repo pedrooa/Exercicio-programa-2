@@ -1,7 +1,8 @@
 import sys, time
+from colorama import Fore, Back, Style, init
 
 meus_ipmon = list()
-
+init()
 class função:
     def lista_meus_ipmons(Inspermons):
         for i in range(3):
@@ -13,6 +14,7 @@ class função:
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.1)
+
 
     #Funções não utilizadas
     def mostra_inspermon(Inspermons,p):
@@ -40,6 +42,7 @@ class função:
         bulb = Inspermons[2]['nome']
         vari = True
         while vari:
+            print(Fore.YELLOW)
             p = int(input('\nQual InsperMon deseja usar: \n{0} (0) \n{1} (1) \n{2} (2)\n'.format(charm,squir,bulb))) #meus_ipmon[p] = inspermon_inicial(p)
             if p == 0 or p == 1 or p == 2 and Inspermons[p]['vida'] != 0:
                 vari = False

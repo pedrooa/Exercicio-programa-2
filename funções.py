@@ -13,7 +13,7 @@ class função:
         for char in estringue:
             sys.stdout.write(char)
             sys.stdout.flush()
-            time.sleep(0.1)
+            time.sleep(0.07)
 
 
     #Funções não utilizadas

@@ -26,7 +26,7 @@ def Batalha(meu,p,oponente,Inspermons):
                     print(Fore.GREEN)
                     print("\nRound {0} :" .format(e))
                     time.sleep(1)
-                    estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
+                    estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
                     função.escrita_timer(estringue)
                     e += 1
                     critical = random.random()
@@ -46,7 +46,7 @@ def Batalha(meu,p,oponente,Inspermons):
                             meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                         elif critical < 0.11:
                             meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.1 + meu['defesa']
-                            print("Seu Inspermon sofreu ataque crítico!!")
+                            print("\nSeu Inspermon sofreu ataque crítico!!")
 
                         if meu['vida'] <= 0:
                             print("\nVocê foi derrotado!")
@@ -79,7 +79,7 @@ def Batalha(meu,p,oponente,Inspermons):
                         meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                     elif critical < 0.11:
                         meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.1 + meu['defesa']
-                        print("Seu Inspermon sofreu ataque crítico!!")
+                        print("\nSeu Inspermon sofreu ataque crítico!!")
 
                     if meu['vida'] <= 0:
                         print("\nVocê foi derrotado!")

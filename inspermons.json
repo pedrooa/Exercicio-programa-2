@@ -1,7 +1,7 @@
 [
 		{
 		"nome" : "Charmander",
-		"poder" : 50,
+		"poder" : 35,
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
@@ -10,7 +10,7 @@
 	},
 	{
 		"nome" : "Squirtle",
-		"poder" : 50,
+		"poder" : 35,
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
@@ -18,7 +18,7 @@
 	},
 	{
 		"nome" : "Bulbasaur",
-		"poder" : 50,
+		"poder" : 35,
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
@@ -26,42 +26,42 @@
 	},
 	{
 		"nome" : "Pikachu",
-		"poder" : 50,
+		"poder" : 40,
 		"vida" : 200,
 		"defesa" : 12
 	},
 	{
 		"nome" : "Caterpie",
 		"poder" : 20,
-		"vida" : 100,
+		"vida" : 150,
 		"defesa" : 5,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Pidgey",
 		"poder" : 30,
-		"vida" : 100,
+		"vida" : 180,
 		"defesa" : 10,
 		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Weedle",
 		"poder" : 30,
-		"vida" : 100,
+		"vida" : 160,
 		"defesa" : 5,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Ratata",
 		"poder" : 30,
-		"vida" : 100,
+		"vida" : 150,
 		"defesa" : 12,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Spearow",
 		"poder" : 30,
-		"vida" : 120,
+		"vida" : 170,
 		"defesa" : 10,
 		"tipo" : "Ar"
 	},
@@ -75,7 +75,7 @@
 	{
 		"nome" : "Sandshrew",
 		"poder" : 32,
-		"vida" : 100,
+		"vida" : 200,
 		"defesa" : 13
 	},
 	{
@@ -88,7 +88,7 @@
 	{
 		"nome" : "Vulpix",
 		"poder" : 27,
-		"vida" : 140,
+		"vida" : 220,
 		"defesa" : 17,
 		"tipo" : "Fogo"
 	},
@@ -102,35 +102,35 @@
 	{
 		"nome" : "Oddish",
 		"poder" : 30,
-		"vida" : 100,
+		"vida" : 150,
 		"defesa" : 10,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Diglett",
 		"poder" : 32,
-		"vida" : 120,
+		"vida" : 160,
 		"defesa" : 13,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Growlithe",
 		"poder" : 29,
-		"vida" : 120,
+		"vida" : 180,
 		"defesa" : 14,
 		"tipo" : "Fogo"
 	},
 	{
 		"nome" : "Abra",
 		"poder" : 33,
-		"vida" : 100,
+		"vida" : 180,
 		"defesa" : 14,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Geodude",
 		"poder" : 33,
-		"vida" : 140,
+		"vida" : 200,
 		"defesa" : 15,
 		"tipo" : "Terra"
 	},
@@ -151,28 +151,28 @@
 	{
 		"nome" : "Exeggcute",
 		"poder" : 29,
-		"vida" : 110,
+		"vida" : 180,
 		"defesa" : 16,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Scyther",
 		"poder" : 30,
-		"vida" : 120,
+		"vida" : 190,
 		"defesa" : 13,
 		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Lapras",
 		"poder" : 60,
-		"vida" : 150,
+		"vida" : 180,
 		"defesa" : 18,
-		"tipo" : "Fogo"
+		"tipo" : "Agua"
 	},
 	{
 		"nome" : "Gyarados",
 		"poder" : 70,
-		"vida" : 200,
+		"vida" : 250,
 		"defesa" : 15,
 		"tipo" : "Agua"
 	},
@@ -200,7 +200,7 @@
 	{
 		"nome" : "Dratini",
 		"poder" : 27,
-		"vida" : 130,
+		"vida" : 180,
 		"defesa" : 12,
 		"tipo" : "Agua"
 	},

@@ -124,7 +124,7 @@ while True:
             estringue ="\nSeu InsperMon está evoluindo!"
             funcao.escrita_timer(estringue)
             meus_ipmon[p]["xp"] = 0
-            meus_ipmon[p]["poder"] +=20
+            meus_ipmon[p]["poder"] +=25
             vidas[p] += 150
             meus_ipmon[p]["vida"] = vidas[p]
             meus_ipmon[p]["defesa"] +=5

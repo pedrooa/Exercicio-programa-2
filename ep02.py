@@ -1,6 +1,7 @@
 #Ep02 - Inspermon
 import random, json
-from funções import função
+import colorama
+from funcoes import funcao
 from colorama import Fore, Back, Style, init
 from Batalha import Batalha
 init()
@@ -8,9 +9,10 @@ init()
 with open('inspermons.json') as arquivo:
     Inspermons = json.load(arquivo)
 
+Insperdex_nome = []
 Insperdex = []
 #Cria a lista com os ipmon iniciais e cria uma lista com os valores padrão de vida
-meus_ipmon = função.lista_meus_ipmons(Inspermons)
+meus_ipmon = funcao.lista_meus_ipmons(Inspermons)
 vidas = []
 traço = "------"*15
 
@@ -29,6 +31,7 @@ while True:
         meus_ipmon = dados[0]
         Insperdex = dados[1]
         vidas = dados[2]
+        Insperdex_nome = dados[3]
         break
     elif load == 2:
         break
@@ -62,11 +65,11 @@ while True:
             print(Fore.BLUE + 'Codigo inexistente!')
     elif açao_usuario == 1:
         #Pergunta ao usuário qual inspermon ele quer usar
-        p = função.inspermon_usuario(meus_ipmon)
+        p = funcao.inspermon_usuario(meus_ipmon)
         if meus_ipmon[p]['vida'] == 0:
             print(Fore.GREEN + '\nSeu InsperMon possui zero de vida!')
             string = "\nCurando ...\n"
-            função.escrita_timer(string)
+            funcao.escrita_timer(string)
             print('InsperMon Curado!')
             meus_ipmon[p]['vida'] = vida
 
@@ -76,25 +79,27 @@ while True:
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.GREEN)
-        #Roda a função timer para a string
+        #Roda a funcao timer para a string
         string = "\nAndando ...\n"
         print(Fore.BLUE)
-        função.escrita_timer(string)
+        funcao.escrita_timer(string)
         #Adiciona os Inspermons ao Insperdex
-        if meus_ipmon[p]['nome'] not in Insperdex:
-            Insperdex.append(meus_ipmon[p]['nome'])
+        if meus_ipmon[p]['nome'] not in Insperdex_nome:
+            Insperdex_nome.append(meus_ipmon[p]['nome'])
+            Insperdex.append(meus_ipmon[p])
         #Gera o pokemon aleatório para combate
         oponente = random.randrange(len(Inspermons))
-        if Inspermons[oponente]['nome'] not in Insperdex:
-            Insperdex.append(Inspermons[oponente]['nome'])
+        if Inspermons[oponente]['nome'] not in Insperdex_nome:
+            Insperdex_nome.append(Inspermons[oponente]['nome'])
+            Insperdex.append(Inspermons[oponente])
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.GREEN)
-        print("\nStats iniciais de seu InsperMon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nXp = {4}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['xp']))
+        print("\nStats iniciais de seu InsperMon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nTipo = {4}\nXp = {5}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['tipo'],meus_ipmon[p]["xp"]))
         #Batalha entre os Inspermons
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
         #Corrige a vida do Inspermon
-        função.correcao_vida(meus_ipmon, p)
+        funcao.correcao_vida(meus_ipmon, p)
         while True:
             print(Fore.WHITE)
             print('\n' + traço + '\n')
@@ -116,25 +121,20 @@ while True:
             print(Fore.WHITE)
             print('\n' + traço + '\n')
             print(Fore.RED)
-            print("\nSeu InsperMon está evoluindo!")
+            estringue ="\nSeu InsperMon está evoluindo!"
+            funcao.escrita_timer(estringue)
             meus_ipmon[p]["xp"] = 0
-            meus_ipmon[p]["poder"] +=15
-            vidas[p] += 100
+            meus_ipmon[p]["poder"] +=25
+            vidas[p] += 150
             meus_ipmon[p]["vida"] = vidas[p]
             meus_ipmon[p]["defesa"] +=5
-        #Mostra o Insperdex
-        print(Fore.WHITE)
-        print('\n' + traço + '\n')
-        print(Fore.YELLOW)
-        print('\nSeu Insperdex é:')
-        função.mostra_insperdex(Insperdex)
         #Salva meusipmon, insperdex e referencia dos valores de vida
-        Checkpoint = [meus_ipmon,Insperdex,vidas]
+        Checkpoint = [meus_ipmon,Insperdex,vidas,Insperdex_nome]
     elif açao_usuario == 3:
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.YELLOW)
         print('\nSeu Insperdex é:')
-        função.mostra_insperdex(Insperdex)
+        funcao.mostra_insperdex(Insperdex)
     else:
         print("\nCódigo incorreto, redigite!")

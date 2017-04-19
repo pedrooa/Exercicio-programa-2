@@ -1,6 +1,6 @@
 import json, random, time
 from colorama import Fore, Back, Style, init
-from funções import função
+from funcoes import funcao
 init()
 
 traço = "------"*18
@@ -25,9 +25,9 @@ def Batalha(meu,p,oponente,Inspermons):
                     print('\n' + traço + '\n')
                     print(Fore.GREEN)
                     print("\nRound {0} :" .format(e))
-                    time.sleep(1)
+                    time.sleep(0.01)
                     estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
-                    função.escrita_timer(estringue)
+                    funcao.escrita_timer(estringue)
                     e += 1
                     critical = random.random()
                     if critical >= 0.11:
@@ -60,13 +60,13 @@ def Batalha(meu,p,oponente,Inspermons):
                 print("\nRound {0} :" .format(e))
                 time.sleep(1)
                 estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
-                função.escrita_timer(estringue)
+                funcao.escrita_timer(estringue)
                 e += 1
                 critical = random.random()
                 if critical >= 0.11:
                     Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder'] + Inspermons[oponente]['defesa']
                 else:
-                    Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder']*1.1 + Inspermons[oponente]['defesa']
+                    Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder']*1.8 + Inspermons[oponente]['defesa']
                     print("\nSeu Insperom deu ataque crítico!!")
                 if Inspermons[oponente]['vida'] <= 0:
                     print("\nVocê derrotou seu oponente!")
@@ -78,7 +78,7 @@ def Batalha(meu,p,oponente,Inspermons):
                     if critical >= 0.11:
                         meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                     elif critical < 0.11:
-                        meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.1 + meu['defesa']
+                        meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.8 + meu['defesa']
                         print("\nSeu Inspermon sofreu ataque crítico!!")
 
                     if meu['vida'] <= 0:

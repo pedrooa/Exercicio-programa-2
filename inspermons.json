@@ -1,28 +1,32 @@
 [
 		{
 		"nome" : "Charmander",
-		"poder" : 25,
+		"poder" : 50,
 		"vida" : 200,
 		"defesa" : 10,
-		"xp" : 0
+		"xp" : 0,
+		"tipo" : "Fogo"
+		
 	},
 	{
 		"nome" : "Squirtle",
-		"poder" : 25,
+		"poder" : 50,
 		"vida" : 200,
 		"defesa" : 10,
-		"xp" : 0
+		"xp" : 0,
+		"tipo" : "Agua"
 	},
 	{
 		"nome" : "Bulbasaur",
-		"poder" : 25,
+		"poder" : 50,
 		"vida" : 200,
 		"defesa" : 10,
-		"xp" : 0
+		"xp" : 0,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Pikachu",
-		"poder" : 30,
+		"poder" : 50,
 		"vida" : 200,
 		"defesa" : 12
 	},
@@ -30,169 +34,197 @@
 		"nome" : "Caterpie",
 		"poder" : 20,
 		"vida" : 100,
-		"defesa" : 5
+		"defesa" : 5,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Pidgey",
-		"poder" : 20,
+		"poder" : 30,
 		"vida" : 100,
-		"defesa" : 10
+		"defesa" : 10,
+		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Weedle",
-		"poder" : 20,
+		"poder" : 30,
 		"vida" : 100,
-		"defesa" : 5
+		"defesa" : 5,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Ratata",
-		"poder" : 20,
+		"poder" : 30,
 		"vida" : 100,
-		"defesa" : 12
+		"defesa" : 12,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Spearow",
-		"poder" : 22,
+		"poder" : 30,
 		"vida" : 120,
-		"defesa" : 10
+		"defesa" : 10,
+		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Ekans",
 		"poder" : 24,
 		"vida" : 150,
-		"defesa" : 12
+		"defesa" : 12,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Sandshrew",
-		"poder" : 23,
+		"poder" : 32,
 		"vida" : 100,
 		"defesa" : 13
 	},
 	{
-		"nome" : "Clefairy",
-		"poder" : 25,
+		"nome" : "ClefAry",
+		"poder" : 35,
 		"vida" : 200,
-		"defesa" : 18
+		"defesa" : 18,
+		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Vulpix",
 		"poder" : 27,
 		"vida" : 140,
-		"defesa" : 17
+		"defesa" : 17,
+		"tipo" : "Fogo"
 	},
 	{
 		"nome" : "Zubat",
 		"poder" : 22,
 		"vida" : 110,
-		"defesa" : 13
+		"defesa" : 13,
+		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Oddish",
-		"poder" : 20,
+		"poder" : 30,
 		"vida" : 100,
-		"defesa" : 10
+		"defesa" : 10,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Diglett",
-		"poder" : 23,
+		"poder" : 32,
 		"vida" : 120,
-		"defesa" : 13
+		"defesa" : 13,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Growlithe",
 		"poder" : 29,
 		"vida" : 120,
-		"defesa" : 14
+		"defesa" : 14,
+		"tipo" : "Fogo"
 	},
 	{
 		"nome" : "Abra",
-		"poder" : 29,
+		"poder" : 33,
 		"vida" : 100,
-		"defesa" : 14
+		"defesa" : 14,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Geodude",
-		"poder" : 22,
+		"poder" : 33,
 		"vida" : 140,
-		"defesa" : 15
+		"defesa" : 15,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Snorlax",
-		"poder" : 20,
+		"poder" : 30,
 		"vida" : 500,
-		"defesa" : 20
+		"defesa" : 20,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Grimer",
-		"poder" : 24,
+		"poder" : 33,
 		"vida" : 200,
-		"defesa" : 14
+		"defesa" : 14,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Exeggcute",
 		"poder" : 29,
 		"vida" : 110,
-		"defesa" : 16
+		"defesa" : 16,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Scyther",
 		"poder" : 30,
 		"vida" : 120,
-		"defesa" : 13
+		"defesa" : 13,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Lapras",
-		"poder" : 30,
+		"poder" : 60,
 		"vida" : 150,
-		"defesa" : 18
+		"defesa" : 18,
+		"tipo" : "Fogo"
 	},
 	{
 		"nome" : "Gyarados",
-		"poder" : 30,
+		"poder" : 70,
 		"vida" : 200,
-		"defesa" : 15
+		"defesa" : 15,
+		"tipo" : "Agua"
 	},
 	{
 		"nome" : "Articuno",
-		"poder" : 43,
+		"poder" :65,
 		"vida" : 300,
-		"defesa" : 19
+		"defesa" : 19,
+		"tipo" : "Agua"
 	},
 	{
 		"nome" : "Zapdos",
-		"poder" : 45,
+		"poder" : 70,
 		"vida" : 300,
-		"defesa" : 17
+		"defesa" : 17,
+		"tipo" : "Ar"
 	},
 	{
 		"nome" : "Moltres",
-		"poder" : 40,
+		"poder" : 68,
 		"vida" : 310,
-		"defesa" : 20
+		"defesa" : 20,
+		"tipo" : "Fogo"
 	},
 	{
 		"nome" : "Dratini",
 		"poder" : 27,
 		"vida" : 130,
-		"defesa" : 12
+		"defesa" : 12,
+		"tipo" : "Agua"
 	},
 	{
 		"nome" : "Dragonite",
-		"poder" : 37,
+		"poder" : 60,
 		"vida" : 260,
-		"defesa" : 20
+		"defesa" : 20,
+		"tipo" : "Ar"
+
 	},
 	{
 		"nome" : "Mew",
-		"poder" : 50,
+		"poder" : 85,
 		"vida" : 500,
-		"defesa" : 20
+		"defesa" : 20,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Mewtwo",
-		"poder" : 55,
+		"poder" : 90,
 		"vida" : 500,
-		"defesa" : 18
+		"defesa" : 18,
+		"tipo" : "Terra"
 	}
 
 ]

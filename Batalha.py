@@ -26,7 +26,7 @@ def Batalha(meu,p,oponente,Inspermons):
                     print(Fore.GREEN)
                     print("\nRound {0} :" .format(e))
                     time.sleep(1)
-                    estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
+                    estringue = "\nO seu {0} possui {1} de vida  <----> O {2} selvagem possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
                     função.escrita_timer(estringue)
                     e += 1
                     critical = random.random()
@@ -59,7 +59,7 @@ def Batalha(meu,p,oponente,Inspermons):
                 print(Fore.GREEN)
                 print("\nRound {0} :" .format(e))
                 time.sleep(1)
-                estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
+                estringue = "\nO seu {0} possui {1} de vida  <----> O {2} selvagem possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
                 função.escrita_timer(estringue)
                 e += 1
                 critical = random.random()

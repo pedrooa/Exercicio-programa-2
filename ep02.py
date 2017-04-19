@@ -39,7 +39,7 @@ while True:
     print(Fore.WHITE)
     print('\n' + traço + '\n')
     print(Fore.YELLOW)
-    açao_usuario = int(input('\nVocê pode caçar outros pokemons, dormir ou abrir o Insperdex.\nDigite: \n(1) para andar\n(2) para dormir\n(3) para abrir o Insperdex\n : '))
+    açao_usuario = int(input('\nVocê pode caçar outros pokemons, dormir ou abrir o Insperdex.\nDigite: \n(1) para andar\n(2) para dormir\n(3) para abrir o Insperdex\n-->'))
     if açao_usuario == 2:
         #Pergunta ao usuário se quer salvar o jogo
         print(Fore.WHITE)

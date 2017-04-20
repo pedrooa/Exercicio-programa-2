@@ -1,6 +1,7 @@
 import json, random, time
 from colorama import Fore, Back, Style, init
 from funcoes import funcao
+
 init()
 
 traço = "------"*18
@@ -10,38 +11,7 @@ def Batalha(meu,p,oponente,Inspermons):
     print(Fore.BLUE)
     print("Voce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))
     val = True
-    if meu['tipo']=='Agua':
-        if Inspermons[oponente]['tipo'] == 'Fogo':
-            meu['poder'] *= 1.6
-            print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Fogo!\n")
-        if Inspermons[oponente]['tipo'] == 'Ar':
-            Inspermons[oponente]['poder'] *=1.6
-            print("\nCuidado! Os ataques desse oponente do tipo Ar serão super efetivos contra o seu Inspermon!\n")
-
-    if meu['tipo']=='Fogo':
-        if Inspermons[oponente]['tipo']== 'Terra':
-            meu['poder'] *= 1.6
-        print("Os ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Terra!")
-        if Inspermons[oponente]['tipo'] == 'Agua':
-            Inspermons[oponente]['poder'] *=1.6
-            print("\nCuidado! Os ataques desse oponente do tipo Agua serão super efetivos contra o seu Inspermon!\n")
-    
-    if meu['tipo']=='Ar':
-        if Inspermons[oponente]['tipo'] == 'Agua':
-            meu['poder'] *= 1.6
-        print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Agua!\n")
-        if Inspermons[oponente]['tipo'] == 'Terra':
-            Inspermons[oponente]['poder'] *=1.6
-            print("\nCuidado! Os ataques desse oponente do tipo Terra serão super efetivos contra o seu Inspermon!\n") 
-
-    if meu['tipo']=='Terra':
-        if Inspermons[oponente]["tipo"] == 'Ar':
-            meu['poder'] *= 1.6
-        print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Ar!\n")
-        if Inspermons[oponente]['tipo'] == 'Fogo':
-            Inspermons[oponente]['poder'] *=1.6
-            print("\nCuidado! Os ataques desse oponente do tipo Fogo serão super efetivos contra o seu Inspermon!\n")
-
+    funcao.poder_tipo_Inspermon(meu, Inspermons, oponente)
     while val:
         fuga = int(input('\nDeseja fugir da batalha? (1) Sim e (2) Não \n'))
         if fuga == 1:
@@ -57,24 +27,21 @@ def Batalha(meu,p,oponente,Inspermons):
                     print('\n' + traço + '\n')
                     print(Fore.GREEN)
                     print("\nRound {0} :" .format(e))
-<<<<<<< HEAD
                     time.sleep(1)
-                    estringue = "\nO seu {0} possui {1} de vida  <----> O {2} selvagem possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
-                    função.escrita_timer(estringue)
-=======
-                    time.sleep(0.8)
-                    estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
+                    estringue = "\nO seu {0} possui {1:.2f} de vida  <----> O {2} selvagem possui {3:.2f} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
                     funcao.escrita_timer(estringue)
->>>>>>> 15b9553daf4bd0870cf8a410128871ca87d863cc
+                    time.sleep(0.8)
                     e += 1
                     critical = random.random()
                     if critical >= 0.11:
                         Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder'] + Inspermons[oponente]['defesa']
                     else:
                         Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder']*1.1 + Inspermons[oponente]['defesa']
+                        print("")
                         print("\nSeu Inspermon deu ataque crítico!!")
                     if Inspermons[oponente]['vida'] <= 0:
                         print("\nVocê derrotou seu oponente!")
+                        print("")
                         print("\nA vida de seu Ipmon restante é: \n{0}".format(meu['vida']))
                         meu['xp'] +=10
                         val = False
@@ -84,9 +51,11 @@ def Batalha(meu,p,oponente,Inspermons):
                             meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                         elif critical < 0.11:
                             meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.1 + meu['defesa']
+                            print("")
                             print("\nSeu Inspermon sofreu ataque crítico!!")
 
                         if meu['vida'] <= 0:
+                            print("")
                             print("\nVocê foi derrotado!")
                             val = False
         elif fuga == 2:
@@ -96,24 +65,22 @@ def Batalha(meu,p,oponente,Inspermons):
                 print('\n' + traço + '\n')
                 print(Fore.GREEN)
                 print("\nRound {0} :" .format(e))
-<<<<<<< HEAD
                 time.sleep(1)
-                estringue = "\nO seu {0} possui {1} de vida  <----> O {2} selvagem possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
-                função.escrita_timer(estringue)
-=======
-                time.sleep(0.8)
-                estringue = "\nO {0} possui {1} de vida  <----> O {2} possui {3} de vida" .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
+                estringue = "\nO seu {0} possui {1:.2f} de vida  <----> O {2} selvagem possui {3:.2f} de vida..." .format(meu['nome'], meu['vida'], Inspermons[oponente]['nome'], Inspermons[oponente]['vida'])
                 funcao.escrita_timer(estringue)
->>>>>>> 15b9553daf4bd0870cf8a410128871ca87d863cc
+                time.sleep(0.8)
                 e += 1
+                #Gera um numero randomico para ataque critico
                 critical = random.random()
                 if critical >= 0.11:
                     Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder'] + Inspermons[oponente]['defesa']
                 else:
                     Inspermons[oponente]['vida'] = Inspermons[oponente]['vida'] - meu['poder']*1.8 + Inspermons[oponente]['defesa']
+                    print("")
                     print("\nSeu Inspermon deu ataque crítico!!")
                 if Inspermons[oponente]['vida'] <= 0:
                     print("\nVocê derrotou seu oponente!")
+                    print("")
                     print("\nA vida de seu Ipmon restante é: \n{0}".format(meu['vida']))
                     meu["xp"] +=10
                     val = False
@@ -123,10 +90,13 @@ def Batalha(meu,p,oponente,Inspermons):
                         meu['vida'] = meu['vida'] - Inspermons[oponente]['poder'] + meu['defesa']
                     elif critical < 0.11:
                         meu['vida'] = meu['vida'] - Inspermons[oponente]['poder']*1.8 + meu['defesa']
+                        print("")
                         print("\nSeu Inspermon sofreu ataque crítico!!")
 
                     if meu['vida'] <= 0:
+                        print("")
                         print("\nVocê foi derrotado!")
                         val = False
         else:
+            print("")
             print('\nVocê digitou o numero errado!')

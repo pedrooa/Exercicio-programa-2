@@ -6,7 +6,7 @@
 		"defesa" : 10,
 		"xp" : 0,
 		"tipo" : "Fogo"
-		
+
 	},
 	{
 		"nome" : "Squirtle",
@@ -79,7 +79,7 @@
 		"defesa" : 13
 	},
 	{
-		"nome" : "ClefAry",
+		"nome" : "Clefary",
 		"poder" : 35,
 		"vida" : 200,
 		"defesa" : 18,

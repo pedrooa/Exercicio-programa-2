@@ -6,16 +6,48 @@ meus_ipmon = list()
 init()
 class funcao:
     def lista_meus_ipmons(Inspermons):
-        for i in range(4):
+        for i in range(3):
             meus_ipmon.append(Inspermons[i])
         return meus_ipmon
 
-    def escrita_timer(estringue):
+    def escrita_timer(estringue, n=0.03):
         for char in estringue:
             sys.stdout.write(char)
             sys.stdout.flush()
-            time.sleep(0.02)
+            time.sleep(n)
 
+    def poder_tipo_Inspermon(meu, Inspermons, oponente):
+        if meu['tipo']=='Agua':
+            if Inspermons[oponente]['tipo'] == 'Fogo':
+                meu['poder'] *= 1.6
+                print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Fogo!\n")
+            elif Inspermons[oponente]['tipo'] == 'Ar':
+                Inspermons[oponente]['poder'] *=1.6
+                print("\nCuidado! Os ataques desse oponente do tipo Ar serão super efetivos contra o seu Inspermon!\n")
+
+        elif meu['tipo']=='Fogo':
+            if Inspermons[oponente]['tipo']== 'Terra':
+                meu['poder'] *= 1.6
+                print("Os ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Terra!")
+            elif Inspermons[oponente]['tipo'] == 'Agua':
+                Inspermons[oponente]['poder'] *=1.6
+                print("\nCuidado! Os ataques desse oponente do tipo Agua serão super efetivos contra o seu Inspermon!\n")
+
+        elif meu['tipo']=='Ar':
+            if Inspermons[oponente]['tipo'] == 'Agua':
+                meu['poder'] *= 1.6
+                print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Agua!\n")
+            elif Inspermons[oponente]['tipo'] == 'Terra':
+                Inspermons[oponente]['poder'] *=1.6
+                print("\nCuidado! Os ataques desse oponente do tipo Terra serão super efetivos contra o seu Inspermon!\n")
+
+        elif meu['tipo']=='Terra':
+            if Inspermons[oponente]["tipo"] == 'Ar':
+                meu['poder'] *= 1.6
+                print("\nOs ataques de seu Inspermon vão ser super efetivos contra esse Inspermon tipo Ar!\n")
+            elif Inspermons[oponente]['tipo'] == 'Fogo':
+                Inspermons[oponente]['poder'] *=1.6
+                print("\nCuidado! Os ataques desse oponente do tipo Fogo serão super efetivos contra o seu Inspermon!\n")
 
     #Função não utilizada
     def mostra_inspermon(Inspermons,p):
@@ -29,13 +61,18 @@ class funcao:
 
     #Corrige a vida negativa dos Inspermons
     def correcao_vida(Inspermons, p):
-        if Inspermons[p]['vida'] < 0:
+        if Inspermons[p]['vida'] <= 0:
             Inspermons[p]['vida'] = 0
-            return Inspermons[p]['vida']
+        return Inspermons[p]['vida']
 
-    def mostra_insperdex(Insperdex):
-        for e in Insperdex:
-            print(e)
+    def mostra_insperdex(Insperdex_nome):
+        for e in Insperdex_nome:
+                print(e['nome'])
+                print('Poder = {0}'. format(e['poder']))
+                print('Defesa = {0}'. format(e['defesa']))
+                print('Vida = {0:.2f}\n'. format(e['vida']))
+                print('Tipo: {0}'. format(e['tipo']))
+
     #Determina qual ipmon inicial
     def inspermon_usuario(Inspermons):
         charm = Inspermons[0]['nome']

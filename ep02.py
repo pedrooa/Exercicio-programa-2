@@ -1,6 +1,7 @@
 #Ep02 - Inspermon
 import random, json
 import colorama
+#from funções import função
 from funcoes import funcao
 from colorama import Fore, Back, Style, init
 from Batalha import Batalha
@@ -13,13 +14,16 @@ Insperdex_nome = []
 Insperdex = []
 #Cria a lista com os ipmon iniciais e cria uma lista com os valores padrão de vida
 meus_ipmon = funcao.lista_meus_ipmons(Inspermons)
-vidas = []
+vidas_meus = []
+vidas_insp = []
 traço = "------"*15
 
 
 #Cria lista de vidas iniciais
 for e in meus_ipmon:
-    vidas.append(e["vida"])
+    vidas_meus.append(e["vida"])
+for e in Inspermons:
+    vidas_insp.append(e['vida'])
 
 Checkpoint = [meus_ipmon]  #Prevenção de erros caso o jogador tente dar Save sem ter jogado nada.
 print(Fore.RED)
@@ -30,8 +34,9 @@ while True:
             dados = json.load(arquivo)
         meus_ipmon = dados[0]
         Insperdex = dados[1]
-        vidas = dados[2]
-        Insperdex_nome = dados[3]
+        vidas_meus = dados[2]
+        vidas_insp = dados[3]
+        Insperdex_nome = dados[4]
         break
     elif load == 2:
         break
@@ -70,7 +75,7 @@ while True:
             print(Fore.GREEN + '\nSeu InsperMon possui zero de vida!')
             string = "\nCurando ...\n"
             funcao.escrita_timer(string)
-            print('InsperMon Curado!')
+            print('Inspermon Curado!')
             meus_ipmon[p]['vida'] = vida
 
         #Armazena a vida inicial do ipmon
@@ -95,7 +100,7 @@ while True:
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.GREEN)
-        print("\nStats iniciais de seu InsperMon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nTipo = {4}\nXp = {5}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['tipo'],meus_ipmon[p]["xp"]))
+        print("\nStats iniciais de seu Inspermon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nTipo = {4}\nXp = {5}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['tipo'],meus_ipmon[p]["xp"]))
         #Batalha entre os Inspermons
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
         #Corrige a vida do Inspermon

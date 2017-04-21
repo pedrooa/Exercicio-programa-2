@@ -14,16 +14,13 @@ Insperdex_nome = []
 Insperdex = []
 #Cria a lista com os ipmon iniciais e cria uma lista com os valores padrão de vida
 meus_ipmon = funcao.lista_meus_ipmons(Inspermons)
-vidas_meus = []
-vidas_insp = []
+vidas = []
 traço = "------"*15
 
 
 #Cria lista de vidas iniciais
 for e in meus_ipmon:
-    vidas_meus.append(e["vida"])
-for e in Inspermons:
-    vidas_insp.append(e['vida'])
+    vidas.append(e['vida'])
 
 Checkpoint = [meus_ipmon]  #Prevenção de erros caso o jogador tente dar Save sem ter jogado nada.
 print(Fore.RED)
@@ -34,7 +31,7 @@ while True:
             dados = json.load(arquivo)
         meus_ipmon = dados[0]
         Insperdex = dados[1]
-        vidas_insp = dados[2]
+        vidas = dados[2]
         Insperdex_nome = dados[3]
         break
     elif load == 2:
@@ -46,7 +43,7 @@ while True:
     print(Fore.WHITE)
     print('\n' + traço + '\n')
     print(Fore.YELLOW)
-    açao_usuario = int(input('\nVocê pode caçar outros pokemons, dormir ou abrir o Insperdex.\nDigite: \n(1) para andar\n(2) para dormir\n(3) para abrir o Insperdex\n-->'))
+    açao_usuario = int(input('\nVocê pode caçar outros Inspermons, dormir ou abrir o Insperdex.\nDigite: \n(1) para andar\n(2) para dormir\n(3) para abrir o Insperdex\n-->'))
     if açao_usuario == 2:
         #Pergunta ao usuário se quer salvar o jogo
         print(Fore.WHITE)
@@ -78,7 +75,7 @@ while True:
             meus_ipmon[p]['vida'] = vida
 
         #Armazena a vida inicial do ipmon
-        vida = vidas_insp[p]
+        vida = vidas[p]
 
         #Separa com traços
         print(Fore.WHITE)
@@ -122,24 +119,65 @@ while True:
                 print(Fore.BLUE)
                 print('\nEscreva direito!')
         #Condição para evolução do Inspermon
-        if meus_ipmon[p]["xp"] >= 50:
-            print(Fore.WHITE)
-            print('\n' + traço + '\n')
-            print(Fore.RED)
-            estringue ="\nSeu InsperMon está evoluindo!"
-            funcao.escrita_timer(estringue)
-            meus_ipmon[p]["xp"] = 0
-            meus_ipmon[p]["poder"] +=25
-            vidas[p] += 150
-            meus_ipmon[p]["vida"] = vidas[p]
-            meus_ipmon[p]["defesa"] +=5
+        if meus_ipmon[p]["Evolucoes"] < 2:
+            if meus_ipmon[p]["xp"] >= 50:
+                print(Fore.WHITE)
+                print('\n' + traço + '\n')
+                print(Fore.RED)
+                estringue ="\nSeu InsperMon está evoluindo!"
+                funcao.escrita_timer(estringue)
+                meus_ipmon[p]["xp"] = 0
+                meus_ipmon[p]["poder"] +=25
+                vidas[p] += 150
+                meus_ipmon[p]["vida"] = vidas[p]
+                meus_ipmon[p]["defesa"] +=5
+                if meus_ipmon[p]["Evolucoes"] == 0:
+                    if meus_ipmon[p]['nome'] == "Charmander":
+                        meus_ipmon[p]['nome'] = "Charmeleon"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Charmander evoluiu para um Charmeleon!"
+                        funcao.escrita_timer(estringue)
+                    if meus_ipmon[p]['nome'] == "Squirtle":
+                        meus_ipmon[p]["nome"] = "Wartortle"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Squirtle evoluiu para um Wartortle!"
+                        funcao.escrita_timer(estringue)
+                    if meus_ipmon[p]["nome"] == "Bulbasaur":
+                        meus_ipmon[p]['nome'] = "Ivysaur"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Bulbasaur evoluiu para um Ivysaur!"
+                        funcao.escrita_timer(estringue)
+                if meus_ipmon[p]["Evolucoes"] == 1:
+                    if meus_ipmon[p]['nome'] == "Charmeleon":
+                        meus_ipmon[p]['nome'] = "Charizard"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Charmeleon evoluiu para um Charizard!"
+                        funcao.escrita_timer(estringue)
+                    if meus_ipmon[p]['nome'] == "Wartortle":
+                        meus_ipmon[p]['nome'] = "Blastoise"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Wartortle evoluiu para um Blastoise!"
+                        funcao.escrita_timer(estringue)
+                    if meus_ipmon[p]["nome"] == "Ivysaur":
+                        meus_ipmon[p]["nome"] = "Venusaur"
+                        estringue = "\n..."
+                        funcao.escrita_timer(estringue, 0.6)
+                        estringue = "Seu Ivysaur evoluiu para um Venusaur!"
+                        funcao.escrita_timer(estringue)
+                        
+                meus_ipmon[p]["Evolucoes"] +=1
         #Salva meusipmon, insperdex e referencia dos valores de vida
-        Checkpoint = [meus_ipmon,Insperdex,vidas_insp[p],Insperdex_nome]
+        Checkpoint = [meus_ipmon,Insperdex,vidas,Insperdex_nome]
     elif açao_usuario == 3:
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.YELLOW)
-        print('\nSeu Insperdex é:')
-        funcao.mostra_insperdex(Insperdex,vidas_insp)
+        print('\nSeu Insperdex é:\n')
+        funcao.mostra_insperdex(Insperdex)
     else:
         print("\nCódigo incorreto, redigite!")

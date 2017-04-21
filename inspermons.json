@@ -5,7 +5,8 @@
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
-		"tipo" : "Fogo"
+		"tipo" : "Fogo",
+		"Evolucoes" : 0
 
 	},
 	{
@@ -14,7 +15,8 @@
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
-		"tipo" : "Agua"
+		"tipo" : "Agua",
+		"Evolucoes" : 0
 	},
 	{
 		"nome" : "Bulbasaur",
@@ -22,7 +24,8 @@
 		"vida" : 200,
 		"defesa" : 10,
 		"xp" : 0,
-		"tipo" : "Terra"
+		"tipo" : "Terra",
+		"Evolucoes": 0
 	},
 	{
 		"nome" : "Pikachu",

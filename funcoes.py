@@ -65,12 +65,12 @@ class funcao:
             Inspermons[p]['vida'] = 0
         return Inspermons[p]['vida']
 
-    def mostra_insperdex(Insperdex_nome):
+    def mostra_insperdex(Insperdex_nome, vidas_insp):
         for e in Insperdex_nome:
                 print(e['nome'])
                 print('Poder = {0}'. format(e['poder']))
                 print('Defesa = {0}'. format(e['defesa']))
-                print('Vida = {0:.2f}\n'. format(e['vida']))
+                print('Vida = {0:.2f}\n'. format(vidas_insp[e]))
                 print('Tipo: {0}'. format(e['tipo']))
 
     #Determina qual ipmon inicial

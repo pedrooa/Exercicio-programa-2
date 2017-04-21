@@ -34,9 +34,8 @@ while True:
             dados = json.load(arquivo)
         meus_ipmon = dados[0]
         Insperdex = dados[1]
-        vidas_meus = dados[2]
-        vidas_insp = dados[3]
-        Insperdex_nome = dados[4]
+        vidas_insp = dados[2]
+        Insperdex_nome = dados[3]
         break
     elif load == 2:
         break
@@ -79,7 +78,8 @@ while True:
             meus_ipmon[p]['vida'] = vida
 
         #Armazena a vida inicial do ipmon
-        vida = vidas[p]
+        vida = vidas_insp[p]
+
         #Separa com traços
         print(Fore.WHITE)
         print('\n' + traço + '\n')
@@ -134,12 +134,12 @@ while True:
             meus_ipmon[p]["vida"] = vidas[p]
             meus_ipmon[p]["defesa"] +=5
         #Salva meusipmon, insperdex e referencia dos valores de vida
-        Checkpoint = [meus_ipmon,Insperdex,vidas,Insperdex_nome]
+        Checkpoint = [meus_ipmon,Insperdex,vidas_insp[p],Insperdex_nome]
     elif açao_usuario == 3:
         print(Fore.WHITE)
         print('\n' + traço + '\n')
         print(Fore.YELLOW)
         print('\nSeu Insperdex é:')
-        funcao.mostra_insperdex(Insperdex)
+        funcao.mostra_insperdex(Insperdex,vidas_insp)
     else:
         print("\nCódigo incorreto, redigite!")

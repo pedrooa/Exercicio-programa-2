@@ -11,6 +11,10 @@ def Batalha(meu,p,oponente,Inspermons):
     print(Fore.BLUE)
     print("Voce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))
     val = True
+    #Gravam referencias de vida e poder para serem acessadas depois da batalha
+    vida_referencia = Inspermons[oponente]['vida']
+    poder_referencia_meu = meu['poder']
+    poder_referencia_oponente = Inspermons[oponente]['poder']
     funcao.poder_tipo_Inspermon(meu, Inspermons, oponente)
     while val:
         fuga = int(input('\nDeseja fugir da batalha? (1) Sim e (2) Não \n'))
@@ -58,6 +62,7 @@ def Batalha(meu,p,oponente,Inspermons):
                             print("")
                             print("\nVocê foi derrotado!")
                             val = False
+                        
         elif fuga == 2:
             e=1
             while meu['vida'] > 0 and Inspermons[oponente]['vida']>0:
@@ -80,10 +85,10 @@ def Batalha(meu,p,oponente,Inspermons):
                     print("\nSeu Inspermon deu ataque crítico!!")
                 if Inspermons[oponente]['vida'] <= 0:
                     print("\nVocê derrotou seu oponente!")
-                    print("")
                     print("\nA vida de seu Ipmon restante é: \n{0}".format(meu['vida']))
                     meu["xp"] +=10
                     val = False
+                    
                 else:
                     critical = random.random()
                     if critical >= 0.11:
@@ -97,6 +102,10 @@ def Batalha(meu,p,oponente,Inspermons):
                         print("")
                         print("\nVocê foi derrotado!")
                         val = False
+                    
         else:
             print("")
             print('\nVocê digitou o numero errado!')
+        Inspermons[oponente]["vida"] = vida_referencia
+        Inspermons[oponente]['poder'] = poder_referencia_oponente
+        meu['poder'] = poder_referencia_meu 

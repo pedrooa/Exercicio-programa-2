@@ -31,7 +31,8 @@
 		"nome" : "Pikachu",
 		"poder" : 40,
 		"vida" : 200,
-		"defesa" : 12
+		"defesa" : 12,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Caterpie",
@@ -79,7 +80,8 @@
 		"nome" : "Sandshrew",
 		"poder" : 32,
 		"vida" : 200,
-		"defesa" : 13
+		"defesa" : 13,
+		"tipo" : "Terra"
 	},
 	{
 		"nome" : "Clefary",

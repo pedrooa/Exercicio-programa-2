@@ -1,6 +1,7 @@
 import json, random, time
 from colorama import Fore, Back, Style, init
 from funcoes import funcao
+import pygame
 
 init()
 
@@ -8,6 +9,9 @@ traço = "------"*18
 
 
 def Batalha(meu,p,oponente,Inspermons):
+    pygame.init()
+    pygame.mixer.music.load('luta.wav')
+    pygame.mixer.music.play()
     print(Fore.BLUE)
     print("Voce se deparou com um {0} selvagem!".format(Inspermons[oponente]['nome']))
     val = True
@@ -108,4 +112,7 @@ def Batalha(meu,p,oponente,Inspermons):
             print('\nVocê digitou o numero errado!')
         Inspermons[oponente]["vida"] = vida_referencia
         Inspermons[oponente]['poder'] = poder_referencia_oponente
-        meu['poder'] = poder_referencia_meu 
+        meu['poder'] = poder_referencia_meu
+        pygame.mixer.music.stop()
+
+

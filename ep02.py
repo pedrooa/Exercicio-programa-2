@@ -1,11 +1,12 @@
 #Ep02 - Inspermon
 import random, json
 import colorama
-#from funções import função
 from funcoes import funcao
 from colorama import Fore, Back, Style, init
 from Batalha import Batalha
+import pygame
 init()
+
 
 with open('inspermons.json') as arquivo:
     Inspermons = json.load(arquivo)
@@ -21,7 +22,9 @@ traço = "------"*15
 #Cria lista de vidas iniciais
 for e in meus_ipmon:
     vidas.append(e['vida'])
-
+pygame.init()
+pygame.mixer.music.load('tema.wav')
+pygame.mixer.music.play()
 Checkpoint = [meus_ipmon]  #Prevenção de erros caso o jogador tente dar Save sem ter jogado nada.
 print(Fore.RED)
 load = int(input('\nDeseja carregar um jogo existente?\n1   -   Sim\n2   -   Nao\n'))
@@ -99,7 +102,12 @@ while True:
         print(Fore.GREEN)
         print("\nStats iniciais de seu Inspermon: \nInspermon : {0}\nPoder = {1}\nVida = {2}\nDefesa = {3}\nTipo = {4}\nXp = {5}".format(meus_ipmon[p]['nome'],meus_ipmon[p]['poder'],meus_ipmon[p]['vida'],meus_ipmon[p]['defesa'],meus_ipmon[p]['tipo'],meus_ipmon[p]["xp"]))
         #Batalha entre os Inspermons
+        pygame.mixer.music.pause()
         Batalha(meus_ipmon[p],p, oponente,Inspermons)
+        pygame.mixer.music.unpause()
+        pygame.init()
+        pygame.mixer.music.load('tema.wav')
+        pygame.mixer.music.play()
         #Corrige a vida do Inspermon
         funcao.correcao_vida(meus_ipmon, p)
         while True:
